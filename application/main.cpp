@@ -1,4 +1,5 @@
 #include "argparse.h"
+#include <format>
 #include <string>
 #include <iostream>
 
@@ -25,6 +26,6 @@ int main(int argc, char * argv[])
     std::cout << "pos2: " << (pos2 ? pos2.get() : "<none>"s) << '\n';
     std::cout << "opt1: " << (opt1 ? opt1.get() : "<none>"s) << '\n';
     std::cout << "opt2: " << (opt2 ? opt2.get() : "<none>"s) << '\n';
-    std::cout << "flag: " << (flag.get<bool>() ? "true"s : "false"s) << '\n';
-    std::cout << "ver: " << (ver.get<bool>() ? "true"s : "false"s) << '\n';
+    std::cout << "flag: " << std::format("{}", flag.get<bool>()) << '\n';
+    std::cout << "ver: " << std::format("{}", ver.get<bool>()) << '\n';
 }
